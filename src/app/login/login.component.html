@@ -1,0 +1,65 @@
+<div>
+    <button (click)="formButtonClick(form1)" #form1>Form1</button>
+    <button (click)="formButtonClick(form2)" #form2>Form2</button>
+    <button (click)="formButtonClick(form3)" #form3>Form3</button>
+</div>
+<div>
+<p>Clicked on {{formMessage}}</p>
+</div>
+
+<div>
+    <button (click)="formButtonClick(form4)" #form4>form1</button>
+    <button (click)="formButtonClick(form5)" #form5>form2</button>
+    <button (click)="formButtonClick(form6)" #form6>form3</button>
+</div>
+
+<div [ngSwitch]="formMessage">
+    <div *ngSwitchCase="'form1'">Clicked On Button1</div>
+    <div *ngSwitchCase="'form2'">Clicked on Button2</div>
+    <div *ngSwitchCase="'form3'">Clicked on Button3</div>
+    <div *ngSwitchDefault>Baler Input</div>
+</div>
+    
+
+
+
+
+
+
+
+
+
+<p #p>login works!</p>
+<!-- {{title}} -->
+<!-- <div style="color: {{colors}}"> -->
+    <h2>by ngFor</h2>
+<ul>
+    <li *ngFor="let a of arr">{{a}}</li>
+</ul>
+
+<h2>Object by ngFor</h2>
+<div *ngIf="objArray.length>0 ; else nodata">
+    <ul>
+        <li *ngFor="let object of objArray">{{object|json}} </li>
+    </ul>
+</div>
+<ng-template #nodata>
+<p>No elements</p>
+</ng-template>
+
+<button (click)="sendMessage()"> Send</button>
+    <div>
+<!-- <img src="{{imgUrl}}" alt="Issue Loading!!!"> -->
+<br>
+
+<!-- <img [src]="imgUrl" alt="Issue Loading!!"> -->
+</div>
+<h2 [class]="choice?'headercolor1':'headercolor2'">Niladri superstar</h2>
+<h1 [style.color]="choice?'green':'blue'" >hello niladri</h1>
+<button (click) ="buttonClick()">Click Here</button>
+<input type="text" (keyup)="onKeyUp($event)">
+<!-- <input type="text" (keyup.enter)="onKey(p)" #input> -->
+<input type="text" [(ngModel)]="oneWay" (keyup.enter)="onKey()">
+
+
+
